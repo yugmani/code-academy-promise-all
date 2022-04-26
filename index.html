@@ -1,1 +1,46 @@
-<div id="app"></div>
+<div id="app">
+  <h1>Using Promise.all()</h1>
+  <ul>
+    <li>
+      What if we’re dealing with multiple promises, but we don’t care about the
+      order?
+    </li>
+    <li>
+      <em>Let’s think in terms of cleaning again.</em> For us to consider our
+      house clean, we need our clothes to dry, our trash bins emptied, and the
+      dishwasher to run.
+    </li>
+    <li>
+      We need all of these tasks to complete but not in any particular order.
+      Furthermore, since they’re all getting done asynchronously, they should
+      really all be happening at the same time!
+    </li>
+    <li>
+      To maximize efficiency we should use <code><em>concurrency</em></code
+      >, multiple asynchronous operations happening together. With promises, we
+      can do this with the function
+      <code style="background-color: lightgray">Promise.all()</code>.
+    </li>
+    <li>
+      <code style="background-color: lightgray">Promise.all()</code> accepts an
+      array of promises as its argument and returns a single promise. That
+      single promise will settle in one of two ways:
+      <ol>
+        <li>
+          If every promise in the argument array resolves, the single promise
+          returned from
+          <code style="background-color: lightgray">Promise.all()</code> will
+          resolve with an array containing the resolve value from each promise
+          in the argument array.
+        </li>
+        <li>
+          If any promise from the argument array rejects, the single promise
+          returned from
+          <code style="background-color: lightgray">Promise.all()</code> will
+          immediately reject with the reason that promise rejected. This
+          behavior is sometimes referred to as <em>failing fast</em>.
+        </li>
+      </ol>
+    </li>
+  </ul>
+</div>
